@@ -1,10 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import ProductDetails from '../../ProductDetails/ProductDetails';
 
-const Explore = () => {
+const Explore = ({  onAddToCart }) => {
   const [products, setProducts] = useState([]);
   const [showExplore, setShowExplore] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  
 
   const handleOnClick = (product) => {
     setSelectedProduct(product);
@@ -19,14 +20,16 @@ const Explore = () => {
     
     <>
       {showExplore ? (
-        <ProductDetails product={selectedProduct}/>
+        <ProductDetails product={selectedProduct}  onAddToCart={onAddToCart} />
       ) : (
         <div className='container'>
       {products.map((product) => (
         <div className='box' key={product.id}>
           <img src={product.image} alt={product.title} />
           <div className='overlay'>
-            <button  onClick={() => handleOnClick(product)} product={products}>View Product</button>
+            <div className='explore'>
+            <button  onClick={() =>{ handleOnClick(product);}} product={products}>View Product</button>
+            </div>
           </div>
         </div>
       ))}

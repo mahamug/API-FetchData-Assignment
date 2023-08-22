@@ -36,18 +36,22 @@ html,body{
   background-size: cover;
   background-repeat: no-repeat;
   border: 1.5px solid #000;
-  width: 15px;
- border-radius: 50px;
- padding: 25px 25px;
- top: 4%;
- transform: rotate(0deg);
+  width: 25px;
+ border-radius: 50%;
+ padding: 20px 20px;
+}
+.nav  span{
+  font-weight: bold;
+position: relative;
+top: -20px;
+right: 15px;
+font-size: 20px;
 }
 .center{
   width: 100%;
   height: calc(730px - 100px);
   position: relative;
   padding: 10px 20px;
-
 }
 .center h1{
 font-size: 120px;
@@ -254,21 +258,43 @@ z-index: 999;
 .description{
   color: gray;
   width: 300px;
- 
   font-size: 15px;
 }
 .ProductDetailButton{
-  background-color: aqua;
+  display:flex;
 }
 .Product{
- 
+  padding: 17px 36px;
+  font-size: 16px;
+  width: 200px;
+  margin: 10px 0;
+  background-color: rgb(150, 236,150);
+  text-transform: uppercase;
+  font-family: aeonik;
+  font-weight: 500;
+  border-radius: 50%;
+  text-transform: capitalize;
 }
 .ProductPlus{
- 
+  background-color: rgb(150, 236,150);
+  padding: 10px 10px;
 }
 .ProductSub{
- 
+  background-color: rgb(150, 236,150);
+  padding: 10px 10px;
 }
 .numbers{
-  
+  margin:0 20px
+}
+.ProductGoBack{
+  padding: 17px 36px;
+  font-size: 16px;
+  width: 200px;
+  margin: 10px 0;
+  background-color: rgb(150, 236,150);
+  text-transform: uppercase;
+  font-family: aeonik;
+  font-weight: 500;
+  border-radius: 50%;
+  text-transform: capitalize;
 }

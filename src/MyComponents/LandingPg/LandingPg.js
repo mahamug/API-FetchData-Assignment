@@ -3,10 +3,17 @@ import   "../Styles/Styles.css"
 import Explore from './Explore/Explore'
 const LandingPg = () => {
   const [showExplore, setShowExplore] = useState(false);
+  const [cartCount, setCartCount] = useState(0); // Add state for cart count
+
+  // Callback function to update cart count
+  const addToCart = () => {
+    setCartCount(cartCount + 1);
+  };
 
   const handleOnClick = () => {
     setShowExplore(true);
   };
+
   return (
     <div className='main'>
     <div className='nav'>
@@ -16,10 +23,12 @@ const LandingPg = () => {
       <h5>Sales</h5>
       <h5>Interaction</h5>
       <h5>Concept</h5>
-      <button></button>
+      <button className='bucket-icon'></button>
+        <span>{cartCount}</span>
+
        </div>
        {showExplore ? (
-        <Explore />
+        <Explore onAddToCart={addToCart}/>
       ) : (
        <div className='center'>
         <div className='heading'>

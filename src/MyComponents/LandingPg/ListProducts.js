@@ -1,16 +1,17 @@
-import React from 'react'
-
-function ListProducts({products, handleShowProductDetail}) {
+import React, { useContext } from 'react'
+import { ecommerceContext } from '../../helper/context'
+function ListProducts() {
+  const{state, handleShowProductDetail}=useContext(ecommerceContext)
   return (
     <div className="container">
-    {products.map((product) => (
+    {state.products.map((product) => (
       <div className="box" key={product.id}>
         <img src={product.image} alt={product.title} />
         <div className="overlay">
           <div className="explore">
             <button
               onClick={() => handleShowProductDetail(product)}
-              product={products}
+              product={state.products}
             >
               View Product
             </button>

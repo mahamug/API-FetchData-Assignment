@@ -1,20 +1,13 @@
-import React,{useState} from 'react'
+import React,{useState,createContext, useReducer} from 'react'
 import LandingPg from './MyComponents/LandingPg/LandingPg';
-
-
+import { EcommerceProvider } from './helper/context';
 function App() {
- 
-  const [cartCount, setCartCount] = useState(0); // Cart count state
-
-  // Function to add items to the cart
-  const onAddToCart = () => {
-    setCartCount(cartCount + 1);
-  };
-
   return (
+    <EcommerceProvider>
     <div>
-    <LandingPg cartCount={cartCount} onAddToCart={onAddToCart} />
+      <LandingPg/>
     </div>
+    </EcommerceProvider>
   );
 }
 

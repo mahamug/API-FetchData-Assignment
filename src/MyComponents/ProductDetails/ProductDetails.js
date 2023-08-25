@@ -1,26 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Explore from "../LandingPg/Explore/Explore";
+import React, { useContext } from "react";
+import { ecommerceContext } from "../../helper/context";
 
-const ProductDetails = ({ product, onAddToCart, handleShowProductList }) => {
-  // console.log("ProductDetail: product>", product);
-  const [count, setCount] = useState(0);
-  const handleAddShopping = () => {
-    setCount(count + 1);
-
-    // console.log("ProductDetail: handleAddShopping > onAddToCart:", onAddToCart);
-    onAddToCart();
-  };
-
-  const handleSubShopping = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
-  };
-
-  // useEffect(() => {
-  //   console.log("ProductDetail: showExplore Changed");
-  //   console.log("ProductDetail: useEffect > onAddToCart:", onAddToCart);
-  // }, [showExplore]);
+const ProductDetails = ({ product, handleShowProductList }) => {
+  const{state,handleAddShopping,handleSubShopping}=useContext(ecommerceContext)
+  
 
   return (
     <div className="productDetailsContainer">
@@ -35,7 +18,7 @@ const ProductDetails = ({ product, onAddToCart, handleShowProductList }) => {
           <button onClick={handleAddShopping} className="ProductPlus">
             +
           </button>
-          <span className="numbers">{count}</span>
+          <span className="numbers">{state.count}</span>
           <button onClick={handleSubShopping} className="ProductSub">
             -
           </button>

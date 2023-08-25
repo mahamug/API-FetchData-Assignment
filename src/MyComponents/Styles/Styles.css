@@ -8,7 +8,7 @@ html,body{
   width: 100%;
 }
 .main{
-  height: 730px;
+  height: 980px;
   width: 100%;
   background-color: rgb(255,236,239);
   position: relative;
@@ -114,7 +114,7 @@ z-index: 999;
   padding: 17px 36px;
   font-size: 16px;
   position: absolute;
-  right: 10%;
+  right: 15%;
   top: 25%;
   transform: rotate(-5deg);
   background-color: rgb(150, 236,150);
@@ -134,7 +134,7 @@ z-index: 999;
   position: absolute;
   transform: rotate(8deg);
   z-index: 99;
-  top: 27%;
+  top: 37%;
   left: 8%;
 }
 .socks::after{

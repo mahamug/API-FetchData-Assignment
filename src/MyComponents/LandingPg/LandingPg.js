@@ -1,20 +1,10 @@
-import React, { useReducer, useState } from "react";
+import React, { useContext } from "react";
 import "../Styles/Styles.css";
 import Explore from "./Explore/Explore";
-import reducer from "../../helper/reducer";
+import { ecommerceContext } from "../../helper/context";
 
-const initialState = {
-  showExplore: false,
-};
-
-const LandingPg = ({ cartCount, onAddToCart }) => {
-  // const [showExplore, setShowExplore] = useState(false);
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const handleOnClick = () => {
-    // setShowExplore(true);
-    dispatch({ type: "Show-explore" });
-  };
-
+const LandingPg = () => {
+const {handleOnClick,state,}=useContext(ecommerceContext)
   return (
     <div className="main">
       <div className="nav">
@@ -25,10 +15,10 @@ const LandingPg = ({ cartCount, onAddToCart }) => {
         <h5>Interaction</h5>
         <h5>Concept</h5>
         <button className="bucket-icon"></button>
-        <span>{cartCount}</span>
+        <span>{state.cartCount}</span>
       </div>
       {state.showExplore ? (
-        <Explore cartCount={cartCount} onAddToCart={onAddToCart} />
+        <Explore />
       ) : (
         <div className="center">
           <div className="heading">
